@@ -7,6 +7,7 @@ import morgan from "morgan";
 
 import contactRoutes from './routes/contact.route.js'
 import vehicleRoutes from './routes/vehicle.route.js'
+import bookingRoutes from './routes/booking.route.js'
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(morgan("dev"))
 //----- routes -----
 app.use("/api/contact", contactRoutes);
 app.use("/api/vehicle", vehicleRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 const PORT = process.env.PORT || 5000;
 
