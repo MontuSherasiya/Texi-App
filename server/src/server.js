@@ -6,6 +6,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 import contactRoutes from './routes/contact.route.js'
+import vehicleRoutes from './routes/vehicle.route.js'
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(morgan("dev"))
 
 //----- routes -----
 app.use("/api/contact", contactRoutes);
+app.use("/api/vehicle", vehicleRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 const contactSchema = new mongoose.Schema({
     name:{
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
     phone:{
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
     message: {
