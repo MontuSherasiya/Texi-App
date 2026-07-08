@@ -1,11 +1,24 @@
-require('dotenv').config();
-import connectDB from "./config/db";
+import dotenv from "dotenv";
+dotenv.config();
+import connectDB from "./config/db.js";
 import express from "express";
+import cors from "cors";
 import morgan from "morgan";
 
-const app = express()
+import contactRoutes from './routes/contact.route.js'
+
+const app = express();
+
+const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
+    .split(",")
+    .map((o) => o.trim());
+
+app.use(cors({origin: allowedOrigins}))
 app.use(express.json())
-app.use(morgan("env"))
+app.use(morgan("dev"))
+
+//----- routes -----
+app.use("/api/contact", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
 
