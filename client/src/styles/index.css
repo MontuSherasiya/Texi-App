@@ -47,3 +47,107 @@ img{
     outline: 3px solid var(--coral);
     outline-offset: 3px;
 }
+
+/* ----------HEADER--------- */
+.site-header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(243, 238, 224, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+.logo{
+    font-family: 'Fraunces', 'serif';
+    font-weight: 700;
+    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo .dot{
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--coral);
+    display: inline-block;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.nav-links a{
+    opacity: 0.75;
+    transition: opacity .2s;
+}
+.nav-links a:hover{
+    opacity: 1;
+}
+.btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--coral);
+    color: var(--white);
+    padding: 11px 22px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    border: none;
+    cursor: pointer;
+    transition: transform .15s ease, background .2s;
+}
+.btn:hover{
+    background: #cf4a22;
+    transform: translateY(-1px);
+}
+.btn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+.btn-ghost{
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+}
+.btn-ghost:hover{
+    background: var(--ink);
+    color: var(--white);
+}
+.hero-ghost{
+    border-color: rgba(243, 238, 224, 0.4);
+    color: var(--paper);
+}
+.cta-ghost{
+    border-color: var(--white);
+    color: var(--white);
+}
+.cta-ghost:hover{
+    background: var(--white);
+    color: var(--coral);
+}
+.call-chip{
+    display: none;
+    font-family: 'Space Mono', 'monospace';
+    font-size: 0.85rem;
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+@media(min-width:860px){
+    .call-chip{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
