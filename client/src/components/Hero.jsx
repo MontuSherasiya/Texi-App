@@ -1,6 +1,6 @@
 import BookinForm from "./BookingForm.jsx";
 
-const stops = ["Rajkot", "Ahmedabad", "Surat", "Mumbai", "Jaipur", "Amritsar", "Jammu", "Bhopal", "Goa"];
+const stops = ["Rajkot", "Somnath", "Diu", "Gir", "Dwarka", "Ahmedabad"];
 
 export default function Hero(){
     return(
