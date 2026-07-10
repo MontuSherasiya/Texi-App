@@ -11,7 +11,7 @@ const bookingSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    pickupDate: {
+    pickUpDate: {
         type: Date,
         required: true
     },

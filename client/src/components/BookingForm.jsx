@@ -52,8 +52,8 @@ export default function BookingForm() {
                     </div>
 
                     <div className="field">
-                        <label htmlFor="pickupDate">Pickup Date</label>
-                        <input id="pickupDate" type="date" value={form.pickUpDate} onChange={handleChange} required/>
+                        <label htmlFor="pickUpDate">Pickup Date</label>
+                        <input id="pickUpDate" type="date" value={form.pickUpDate} onChange={handleChange} required/>
                     </div>
                 </div>
 
@@ -83,8 +83,8 @@ export default function BookingForm() {
                     {status.state === "loading" ? "Sending..." : "Get Fare Estimate"}
                 </button>
 
-                {status.state === "success" && <p className="form-not success">{status.message}</p>}
-                {status.state === "error" && <p className="form-not error">{status.message}</p>}
+                {status.state === "success" && <p className="form-note success">{status.message}</p>}
+                {status.state === "error" && <p className="form-note error">{status.message}</p>}
             </form>
         </div>
     );

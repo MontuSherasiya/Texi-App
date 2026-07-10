@@ -3,9 +3,9 @@ import Booking from "../models/Booking.js";
 //Post
 async function createBooking(req, res, next) {
     try {
-        const {name, phone, pickupDate, from, to, vehicle} = req.body;
+        const {name, phone, pickUpDate, from, to, vehicle} = req.body;
 
-        if(!name || !phone || !pickupDate || !from || !to || !vehicle){
+        if(!name || !phone || !pickUpDate || !from || !to || !vehicle){
             return res.status(400).json({
                 success: false,
                 message: "All fields are required."
@@ -15,7 +15,7 @@ async function createBooking(req, res, next) {
         const booking = await Booking.create({
             name,
             phone,
-            pickupDate,
+            pickUpDate,
             from,
             to,
             vehicle
