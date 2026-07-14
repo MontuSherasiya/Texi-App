@@ -46,7 +46,8 @@ export default function Fleet(){
                             <div className="meter-card" key={v._id}>
                                 <div 
                                 className="meter-photo" 
-                                style={{background: gradients[i % gradients.length]}}>
+                                style={!v.photoUrl ? {background: gradients[i % gradients.length]} : undefined}>
+                                    {v.photoUrl && <img src={v.photoUrl} alt={v.name} />}
                                     <div className="meter-fare">₹{v.ratePerKm}/km</div>
                                 </div>
                                 <div className="meter-body">
