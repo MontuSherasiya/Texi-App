@@ -4,7 +4,7 @@ import adminApi from "../api/adminApi.js"
 
 export default function Login() {
     const navigate = useNavigate();
-    const [form, setForm] = useState({ usename: "", password: "" });
+    const [form, setForm] = useState({ username: "", password: "" });
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -14,7 +14,6 @@ export default function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        setForm("");
         setLoading(true);
         try {
             const res = await adminApi.post("/auth/login", form);

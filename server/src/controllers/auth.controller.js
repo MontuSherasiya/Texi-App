@@ -6,14 +6,14 @@ export async function login(req, res, next) {
     try {
         const { username, password } = req.body;
 
-        if (!usename || !password) {
+        if (!username || !password) {
             return res.status(400).json({
                 success: false,
                 message: "Username and Password are required..."
             });
         }
 
-        const admin = await Admin.findOne({ usename });
+        const admin = await Admin.findOne({ username });
         if (!admin) {
             return res.status(401).json({
                 success: false,
@@ -31,7 +31,7 @@ export async function login(req, res, next) {
 
         const token = jwt.sign({
             id: admin._id,
-            username: admin.usenamme
+            username: admin.usernamme
         }, process.env.JWT_SECRET,
             { expiresIn: "7d" }
         );

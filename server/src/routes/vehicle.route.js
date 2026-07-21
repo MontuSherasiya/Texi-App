@@ -1,10 +1,10 @@
 import { listVehicles, createVehicle } from "../controllers/vehicle.controller.js";
 import express from "express";
-import requireAdminKey from "../middlewares/requireAdminkey.js";
+import verifyToken from "../middlewares/verifyToken.js";
 
 const router = express.Router();
 
 router.get('/', listVehicles);
-router.post('/', requireAdminKey, createVehicle);
+router.post('/', verifyToken, createVehicle);
 
 export default router

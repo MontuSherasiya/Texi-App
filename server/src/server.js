@@ -27,7 +27,7 @@ app.use(morgan("dev"))
 app.get("/api/health", (req, res) => res.json({status: "ok"}));
 app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
-app.use("/api/vehicle", vehicleRoutes);
+app.use("/api/vehicles", vehicleRoutes);
 app.use("/api/bookings", bookingRoutes);
 
 //error handling

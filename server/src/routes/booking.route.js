@@ -1,11 +1,11 @@
 import { listBooking, createBooking, updateBookingStatus } from "../controllers/booking.controller.js";
 import express from "express";
-import requireAdminKey from "../middlewares/requireAdminkey.js"
+import verifyToken from "../middlewares/verifyToken.js"
 
 const router = express.Router();
 
 router.post('/', createBooking);
-router.get('/', requireAdminKey, listBooking);
-router.patch('/:id/status', requireAdminKey, updateBookingStatus);
+router.get('/', verifyToken, listBooking);
+router.patch('/:id/status', verifyToken, updateBookingStatus);
 
 export default router

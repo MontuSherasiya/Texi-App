@@ -16,7 +16,7 @@ export default function Fleet(){
     
     useEffect(() => {
         api
-            .get("/vehicle")
+            .get("/vehicles")
             .then((res) => {
                 setVehicles(res.data);
                 setLoadState("ready");
