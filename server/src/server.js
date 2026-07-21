@@ -7,6 +7,7 @@ import morgan from "morgan";
 
 import { notFound, errorHandler } from "./middlewares/errorHandler.js";
 
+import authRoutes from "./routes/auth.route.js" 
 import contactRoutes from './routes/contact.route.js'
 import vehicleRoutes from './routes/vehicle.route.js'
 import bookingRoutes from './routes/booking.route.js'
@@ -24,6 +25,7 @@ app.use(morgan("dev"))
 
 //----- routes -----
 app.get("/api/health", (req, res) => res.json({status: "ok"}));
+app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/vehicle", vehicleRoutes);
 app.use("/api/bookings", bookingRoutes);
