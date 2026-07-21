@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const adminSchema = new mongoose.Schema(
     {
-        usenamme: {
+        username: {
             type: String,
             required: true,
             unique: true,
