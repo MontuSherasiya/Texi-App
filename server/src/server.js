@@ -11,6 +11,13 @@ import authRoutes from "./routes/auth.route.js"
 import contactRoutes from './routes/contact.route.js'
 import vehicleRoutes from './routes/vehicle.route.js'
 import bookingRoutes from './routes/booking.route.js'
+import settingsRoutes from './routes/settings.route.js'
+import { createCrudRouter } from "./routes/crud.route.js";
+
+import Destination from './models/Destination.js';
+import Testimonial from './models/Testimonial.js';
+import Stat from './models/Stat.js';
+import WhyUsItem from './models/WhyUsItem.js';
 
 const app = express();
 
@@ -29,6 +36,12 @@ app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/vehicles", vehicleRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/settings", settingsRoutes);
+
+app.use("/api/destinations", createCrudRouter(Destination));
+app.use("/api/testimonial", createCrudRouter(Testimonial));
+app.use("/api/stats", createCrudRouter(Stat));
+app.use("/api/why-us", createCrudRouter(WhyUsItem));
 
 //error handling
 app.use(notFound);
