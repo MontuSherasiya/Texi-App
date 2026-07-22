@@ -64,4 +64,18 @@ async function updateBookingStatus(req, res, next) {
     }
 }
 
-export {createBooking, listBooking, updateBookingStatus}
+async function deleteBooking(req, res, next) {
+    try {
+        const booking = await Booking.findByIdAndDelete(req.params.id);
+
+        if(!booking){
+            return res.status(404).json({message: "Booking not Found."})
+        }
+
+        res.json({message: "Booking Deleted."})
+    } catch (error) {
+        next(error);
+    }
+}
+
+export {createBooking, listBooking, updateBookingStatus, deleteBooking}

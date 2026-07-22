@@ -4,7 +4,7 @@ import connectDB from "../config/db.js";
 import Destination from "../models/Destination.js";
 import Testimonial from "../models/Testimonial.js";
 import Stat from "../models/Stat.js";
-import WhyUsItem from "../models/WhyUsItem";
+import WhyUsItem from "../models/WhyUsItem.js";
 
 const destinations = [
     {
